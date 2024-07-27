@@ -25,7 +25,10 @@ def main():
 
     print(banner)
     mdp = Write.Input("Mot De Passe à essayer\n     > ",Colors.blue_to_cyan,interval=0.00001)
-    if not isinstance(mdp,int):
+    try:
+        mdp = int(mdp)
+        mdp= str(mdp)
+    except:
         main()
     print("\n")
     n = 0
